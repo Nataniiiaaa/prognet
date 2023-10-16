@@ -6,7 +6,7 @@
     <title>Form Biodata</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-      body {
+body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
@@ -27,22 +27,20 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-table {
+.form-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    border: 1px solid #ccc; /* Border for the whole table */
 }
 
-table, th, td {
-    border: 1px solid #ccc;
-}
-
-th, td {
+.form-table th, .form-table td {
+    border: 1px solid #ccc; /* Border for table cells */
     padding: 8px;
     text-align: left;
 }
 
-th {
+.form-table th {
     background-color: #f2f2f2;
 }
 
@@ -59,6 +57,7 @@ th {
     text-align: center;
     color: #333;
 }
+
     </style>
 </head>
 <body>
