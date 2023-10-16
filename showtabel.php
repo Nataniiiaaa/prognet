@@ -6,45 +6,59 @@
     <title>Form Biodata</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* Tempatkan CSS yang telah diberikan di sini */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+h1 {
+    text-align: center;
+    color: #333;
+}
 
-        #result {
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+#result {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        #result p {
-            margin: 0 0 10px;
-            padding: 0;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
-        #result strong {
-            font-weight: bold;
-        }
+table, th, td {
+    border: 1px solid #ccc;
+}
 
-        #result h2 {
-            text-align: center;
-            color: #333;
-        }
+th, td {
+    padding: 8px;
+    text-align: left;
+}
 
-        #result .favorite-items {
-            margin: 0;
-        }
+th {
+    background-color: #f2f2f2;
+}
+
+#result p {
+    margin: 0;
+    padding: 0;
+}
+
+#result strong {
+    font-weight: bold;
+}
+
+#result h2 {
+    text-align: center;
+    color: #333;
+}
     </style>
 </head>
 <body>
