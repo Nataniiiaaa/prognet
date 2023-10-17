@@ -4,10 +4,9 @@ $dbname = 'db_2205551001';
 $username = '2205551001'; 
 $password = '2205551001'; 
 
-try {
-    $koneksi = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Atur opsi lainnya jika diperlukan
-} catch (PDOException $e) {
-    die("Koneksi gagal: " . $e->getMessage());
+$conn = new mysqli($host, $dbname, $username, $password);
+if ($conn->connect_error) {
+    die("Connection Failed: ". $conn->connect_error);
 }
+echo "Connection Successfully";
 ?>
