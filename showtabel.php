@@ -1,3 +1,7 @@
+<?php
+require 'koneksi.php'; // Ini akan memasukkan koneksi ke database
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
