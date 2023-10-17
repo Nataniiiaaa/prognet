@@ -65,6 +65,24 @@ input[type='submit']:hover {
 </head>
 <body>
     <h1>Hasil Biodata</h1>
+    <table id="dataTable" border="1">
+      <tr>
+        <th>Name</th>
+        <th>NIM</th>
+        <th>Date of Birth</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Status</th>
+        <th>Major</th>
+        <th>Campus</th>
+        <th>Hobbies</th>
+        <th>Favourite Foods</th>
+        <th>Favourite Drinks</th>
+        <th>Favourite Color</th>
+      </tr>
+    </table>
     <div id="result">
         <?php
         error_reporting(E_ALL);
