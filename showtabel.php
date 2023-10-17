@@ -9,6 +9,7 @@
     <h1>Hasil Biodata</h1>
     <table id="dataTable" border="1">
       <tr>
+        <th>No</th>
         <th>Name</th>
         <th>NIM</th>
         <th>Date of Birth</th>
@@ -23,10 +24,12 @@
         <th>Favourite Foods</th>
         <th>Favourite Drinks</th>
         <th>Favourite Color</th>
+        <th>Aksi</th>
       </tr>
       <?php
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "<tr>";
+          echo "<td>" . $counter++ . "</td>";
           echo "<td>" . $_POST["name"] . "</td>";
           echo "<td>" . $_POST["nim"] . "</td>";
           echo "<td>" . $_POST["birthdate"] . "</td>";
@@ -56,6 +59,12 @@
           echo "</td>";
 
           echo "<td>" . $_POST["favorite-color"] . "</td>";
+        // Kolom Aksi
+        echo "<td>";
+        echo "<a href='detail.php'>Detail</a> | ";
+        echo "<a href='edit.php'>Edit</a> | ";
+        echo "<a href='delete.php'>Delete</a>";
+        echo "</td>";
           echo "</tr>";
       } else {
           echo "Data belum dikirim. Silakan isi formulir terlebih dahulu.";
