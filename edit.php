@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
 
         <label for="drink">Favourite Drinks:</label>
         <?php
-        $drinkOptions = ["Air Mineral", "Teh Manis", "Kopi", "Es Jeruk", "Susu"];
+        $drinkOptions = ["Coffee", "Tea", "Soda", "Wine"];
         foreach ($drinkOptions as $option) {
             echo "<input type='checkbox' name='drink[]' value='$option'";
             if (in_array($option, explode(", ", $data['favorite_drinks']))) {
