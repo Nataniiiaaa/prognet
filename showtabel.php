@@ -14,9 +14,9 @@ body {
   padding: 0;
 }
 
-form {
+table {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
@@ -30,8 +30,10 @@ h1 {
 
 label {
   font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
+}
+
+table tr td {
+  padding: 10px;
 }
 
 input[type='text'],
