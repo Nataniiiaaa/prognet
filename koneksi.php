@@ -1,5 +1,5 @@
 <?php
-$server = '192.168.4.4'; 
+$server = 'prognet.localnet'; 
 $dbname = 'db_2205551001'; 
 $username = '2205551001'; 
 $password = '2205551001'; 
