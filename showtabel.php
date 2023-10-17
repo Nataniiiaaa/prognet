@@ -27,6 +27,7 @@
         <th>Aksi</th>
       </tr>
       <?php
+      $counter = 1;
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "<tr>";
           echo "<td>" . $counter++ . "</td>";
