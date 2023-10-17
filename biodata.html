@@ -182,40 +182,49 @@
         const newRow = dataTable.insertRow(-1);
     
         const cellName = newRow.insertCell(0);
-        const cellNim = newRow.insertCell(1);
-        const cellBirthdate = newRow.insertCell(2);
-        const cellPhone = newRow.insertCell(3);
-        const cellEmail = newRow.insertCell(4);
-        const cellAddress = newRow.insertCell(5);
-        const cellGender = newRow.insertCell(6);
-        const cellStatus = newRow.insertCell(7);
-        const cellMajor = newRow.insertCell(8);
-        const cellCampus = newRow.insertCell(9);
-        const cellHobbies = newRow.insertCell(10);
-        const cellFood = newRow.insertCell(11);
-        const cellDrink = newRow.insertCell(12);
-        const cellColor = newRow.insertCell(13);
-    
         cellName.innerHTML = name;
+    
+        const cellNim = newRow.insertCell(1);
         cellNim.innerHTML = nim;
+    
+        const cellBirthdate = newRow.insertCell(2);
         cellBirthdate.innerHTML = birthdate;
+    
+        const cellPhone = newRow.insertCell(3);
         cellPhone.innerHTML = phone;
+    
+        const cellEmail = newRow.insertCell(4);
         cellEmail.innerHTML = email;
+    
+        const cellAddress = newRow.insertCell(5);
         cellAddress.innerHTML = address;
+    
+        const cellGender = newRow.insertCell(6);
         cellGender.innerHTML = gender;
+    
+        const cellStatus = newRow.insertCell(7);
         cellStatus.innerHTML = status;
+    
+        const cellMajor = newRow.insertCell(8);
         cellMajor.innerHTML = major;
+    
+        const cellCampus = newRow.insertCell(9);
         cellCampus.innerHTML = campus;
+    
+        const cellHobbies = newRow.insertCell(10);
         cellHobbies.innerHTML = hobbies;
     
-        let foods = [];
+        const cellFood = newRow.insertCell(11);
+        const foods = [];
         food.forEach((f) => foods.push(f.value));
         cellFood.innerHTML = foods.join(", ");
     
-        let drinks = [];
+        const cellDrink = newRow.insertCell(12);
+        const drinks = [];
         drink.forEach((d) => drinks.push(d.value));
         cellDrink.innerHTML = drinks.join(", ");
     
+        const cellColor = newRow.insertCell(13);
         cellColor.innerHTML = favoriteColor;
     
         form.reset();
