@@ -156,6 +156,71 @@
     
     <div id="result"></div>
     <script src="form-validation.js"></script>
+
+    <script>
+      const form = document.getElementById("biodataForm");
+      const dataTable = document.getElementById("dataTable");
+    
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        const name = document.getElementById("name").value;
+        const nim = document.getElementById("nim").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const address = document.getElementById("address").value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const status = document.getElementById("status").value;
+        const major = document.getElementById("major").value;
+        const campus = document.getElementById("campus").value;
+        const hobbies = document.getElementById("hobbies").value;
+        const food = document.querySelectorAll('input[name="food[]"]:checked');
+        const drink = document.querySelectorAll('input[name="drink[]"]:checked');
+        const favoriteColor = document.getElementById("favorite-color").value;
+    
+        const newRow = dataTable.insertRow(-1);
+    
+        const cellName = newRow.insertCell(0);
+        const cellNim = newRow.insertCell(1);
+        const cellBirthdate = newRow.insertCell(2);
+        const cellPhone = newRow.insertCell(3);
+        const cellEmail = newRow.insertCell(4);
+        const cellAddress = newRow.insertCell(5);
+        const cellGender = newRow.insertCell(6);
+        const cellStatus = newRow.insertCell(7);
+        const cellMajor = newRow.insertCell(8);
+        const cellCampus = newRow.insertCell(9);
+        const cellHobbies = newRow.insertCell(10);
+        const cellFood = newRow.insertCell(11);
+        const cellDrink = newRow.insertCell(12);
+        const cellColor = newRow.insertCell(13);
+    
+        cellName.innerHTML = name;
+        cellNim.innerHTML = nim;
+        cellBirthdate.innerHTML = birthdate;
+        cellPhone.innerHTML = phone;
+        cellEmail.innerHTML = email;
+        cellAddress.innerHTML = address;
+        cellGender.innerHTML = gender;
+        cellStatus.innerHTML = status;
+        cellMajor.innerHTML = major;
+        cellCampus.innerHTML = campus;
+        cellHobbies.innerHTML = hobbies;
+    
+        let foods = [];
+        food.forEach((f) => foods.push(f.value));
+        cellFood.innerHTML = foods.join(", ");
+    
+        let drinks = [];
+        drink.forEach((d) => drinks.push(d.value));
+        cellDrink.innerHTML = drinks.join(", ");
+    
+        cellColor.innerHTML = favoriteColor;
+    
+        form.reset();
+      });
+    </script>
     
   </body>
 </html>
