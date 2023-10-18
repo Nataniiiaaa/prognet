@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $favoriteColor = $_POST["favorite-color"];
 
     // SQL statement untuk memasukkan data ke dalam tabel biodata
-    $sql = "INSERT INTO biodata (NAME, nim, birthdate, phone, email, address, gender, status_user, major, campus, hobbies, favorite_foods, favorite_drinks, favorite_color)
+    $sql = "INSERT INTO tb_biodata (NAME, nim, birthdate, phone, email, address, gender, status_user, major, campus, hobbies, favorite_foods, favorite_drinks, favorite_color)
             VALUES ('$name', '$nim', '$birthdate', '$phone', '$email', '$address', '$gender', '$status', '$major', '$campus', '$hobbies', '$favoriteFoods', '$favoriteDrinks', '$favoriteColor')";
 
     if ($conn->query($sql) === TRUE) {
