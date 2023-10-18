@@ -26,13 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
     <title>Edit Biodata</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-      }
-
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('images/background.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+}
       h1 {
         text-align: center;
         color: #333;
