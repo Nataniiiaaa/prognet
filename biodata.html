@@ -57,7 +57,7 @@
   </head>
   <body>
     <h1>Form Biodata</h1>
-    <form id="biodataForm" action="showtabel.php" method="post">
+    <form id="biodataForm" action="proses.php" method="post">
       <label for="nam">Name:</label>
       <input type="text" id="name" name="name" required /><br />
 
@@ -105,7 +105,7 @@
       ><br />
 
       <label for="hobbies">Hobbies:</label><br />
-      <textarea id="hobbies" name="hobbies" required></textarea><br />
+      <textarea id="hobbies" name="hobbies[]" required></textarea><br />
 
       <label>Favourite Foods:</label><br />
       <input type="checkbox" id="food-pizza" name="food[]" value="pizza" />

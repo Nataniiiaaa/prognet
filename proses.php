@@ -23,13 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // SQL statement untuk memasukkan data ke dalam tabel biodata
     $sql = "INSERT INTO tb_biodata (name, nim, birthdate, phone, email, address, gender, status_user, major, campus, hobbies, favorite_foods, favorite_drinks, favorite_color)
-            VALUES ('$name', '$nim', '$birthdate', '$phone', '$email', '$address', '$gender', '$status', '$major', '$campus', '$hobbies', '$favoriteFoods', '$favoriteDrinks', '$favoriteColor')";
+            VALUES ('$name', '$nim', '$birthdate', '$phone', '$email', '$address', '$gender', '$status_user', '$major', '$campus', '$hobbies', '$favoriteFoods', '$favoriteDrinks', '$favoriteColor')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Data berhasil disimpan.";
+        header("Location: showtabel.php"); // Redirect ke showtabel.php
+        exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
 
     // Tutup koneksi ke database
     $conn->close();
