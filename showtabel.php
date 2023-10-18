@@ -4,6 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Biodata</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type='text'],
+      input[type='tel'],
+      input[type='email'],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type='submit'] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      input[type='submit']:hover {
+        background-color: #0056b3;
+      }
+    </style>
 </head>
 <body>
     <h1>Hasil Biodata</h1>
@@ -12,18 +63,10 @@
             <th>No</th>
             <th>Name</th>
             <th>NIM</th>
-            <th>Birthdate</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>Address</th>
-            <th>Gender</th>
             <th>Status</th>
             <th>Major</th>
-            <th>Campus</th>
-            <th>Hobbies</th>
-            <th>Favorite Foods</th>
-            <th>Favorite Drinks</th>
-            <th>Favorite Color</th>
             <th>Aksi</th>
             <!-- Add other table headers here -->
         </tr>
@@ -42,22 +85,11 @@
                 echo "<td>" . $counter++ . "</td>";
                 echo "<td>" . $row["NAME"] . "</td>";
                 echo "<td>" . $row["nim"] . "</td>";
-                echo "<td>" . $row["birthdate"] . "</td>";
                 echo "<td>" . $row["phone"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
-                echo "<td>" . $row["address"] . "</td>";
-                echo "<td>" . $row["gender"] . "</td>";
                 echo "<td>" . $row["status_user"] . "</td>";
                 echo "<td>" . $row["major"] . "</td>";
-                echo "<td>" . $row["campus"] . "</td>";
-                echo "<td>" . $row["hobbies"] . "</td>";
-                echo "<td>" . $row["favorite_foods"] . "</td>";
-                echo "<td>" . $row["favorite_drinks"] . "</td>";
-                echo "<td>" . $row["favorite_color"] . "</td>";
-                // Add other table data here
-                echo "</tr>";
                 ?>
-                <tr>
     <td>
         <button class="action-button" onclick="window.location.href='detail.php?id=<?php echo $row['id']; ?>'">Detail</button>
         <button class="action-button" onclick="window.location.href='edit.php?id=<?php echo $row['id']; ?>'">Edit</button>
@@ -74,6 +106,7 @@
         // Close the database connection
         $conn->close();
         ?>
-    </table>
+    </table><br></br>
+    <a href="biodata.html"><button type="button">Add Data</a>
 </body>
 </html>

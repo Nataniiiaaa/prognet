@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $address = $_POST["address"];
     $gender = $_POST["gender"];
-    $status = $_POST["status"];
+    $status_user = $_POST["status"];
     $major = $_POST["major"];
     $campus = $_POST["campus"];
     $hobbies = implode(", ", $_POST["hobbies"]);

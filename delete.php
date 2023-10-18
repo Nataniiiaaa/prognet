@@ -1,10 +1,10 @@
 <?php
 require 'koneksi.php'; // Ini akan memasukkan koneksi ke database
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
+if (isset($_GET["id"])) {
     $id = $_GET["id"];
-    $query = "SELECT * FROM biodata WHERE id = $id";
-    $result = mysqli_query($koneksi, $query);
+    $query = "SELECT * FROM tb_biodata WHERE id = $id";
+    $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirm"])) {
+if (isset($_POST["confirm"])) {
     // Hapus entri berdasarkan ID yang diberikan
-    $deleteQuery = "DELETE FROM biodata WHERE id = $id";
-    if (mysqli_query($koneksi, $deleteQuery)) {
+    $deleteQuery = "DELETE FROM tb_biodata WHERE id = $id";
+    if (mysqli_query($conn, $deleteQuery)) {
         echo "Data berhasil dihapus. <a href='showtabel.php'>Kembali ke Tabel Biodata</a>";
         exit;
     } else {
@@ -100,7 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirm"])) {
 
     <form method="post">
         <input type="submit" name="confirm" value="Hapus">
-        <a href="showtabel.php">Batal</a>
+        <a href="showtabel.php"><button type="button">Batal</a>
     </form>
+
 </body>
 </html>
