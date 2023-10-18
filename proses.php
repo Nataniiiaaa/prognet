@@ -34,4 +34,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Data belum dikirim. Silakan isi formulir terlebih dahulu.";
 }
 ?>
-<a href="showform.php" class="btn btn-danger">Kembali</a>
