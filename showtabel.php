@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Biodata</title>
-    <style>
 
+    <style>
       body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
@@ -58,47 +58,55 @@
 </head>
 <body>
     <h1>Hasil Biodata</h1>
-    <div id="result">
+    <table id="dataTable" border="1">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>NIM</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Major</th>
+            <th>Aksi</th>
+            <!-- Add other table headers here -->
+        </tr>
         <?php
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            echo "<h2>Hii!Ini  Biodata dirimu:</h2>";
-            echo "<p><strong>Name:</strong> " . $_POST["name"] . "</p>";
-            echo "<p><strong>NIM:</strong> " . $_POST["nim"] . "</p>";
-            echo "<p><strong>Date of Birth:</strong> " . $_POST["birthdate"] . "</p>";
-            echo "<p><strong>Phone:</strong> " . $_POST["phone"] . "</p>";
-            echo "<p><strong>Email:</strong> " . $_POST["email"] . "</p>";
-            echo "<p><strong>Address:</strong> " . $_POST["address"] . "</p>";
-            echo "<p><strong>Gender:</strong> " . $_POST["gender"] . "</p>";
-            echo "<p><strong>Status:</strong> " . $_POST["status"] . "</p>";
-            echo "<p><strong>Major:</strong> " . $_POST["major"] . "</p>";
-            echo "<p><strong>Campus:</strong> " . $_POST["campus"] . "</p>";
-            echo "<p><strong>Hobbies:</strong> " . $_POST["hobbies"] . "</p>";
+        // Include your database connection file
+        include 'koneksi.php';
 
-            echo "<p><strong>Favorite Foods:</strong> ";
-            if (isset($_POST["food"]) && is_array($_POST["food"])) {
-                echo implode(", ", $_POST["food"]);
-            } else {
-                echo "No favorite foods selected."; // Or any other appropriate message
+        // Execute a SELECT query
+        $sql = "SELECT * FROM tb_biodata"; // Replace 'your_table' with your actual table name
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $counter = 1;
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $counter++ . "</td>";
+                echo "<td>" . $row["NAME"] . "</td>";
+                echo "<td>" . $row["nim"] . "</td>";
+                echo "<td>" . $row["phone"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . $row["status_user"] . "</td>";
+                echo "<td>" . $row["major"] . "</td>";
+                ?>
+    <td>
+        <button class="action-button" onclick="window.location.href='detail.php?id=<?php echo $row['id']; ?>'">Detail</button>
+        <button class="action-button" onclick="window.location.href='edit.php?id=<?php echo $row['id']; ?>'">Edit</button>
+        <button class="action-button" onclick="window.location.href='delete.php?id=<?php echo $row['id']; ?>'">Delete</button>
+    </td>
+</tr>
+<?php
+
             }
-            
-            echo "</p>";
-
-            echo "<p><strong>Favorite Drinks:</strong> ";
-            if (isset($_POST["drink"]) && is_array($_POST["drink"])) {
-                echo implode(", ", $_POST["drink"]);
-            } else {
-                echo "No favorite drinks selected."; // Or any other appropriate message
-            }
-            
-            echo "</p>";
-
-            echo "<p><strong>Favorite Color:</strong> " . $_POST["favorite-color"] . "</p>";
         } else {
-            echo "Data belum dikirim. Silakan isi formulir terlebih dahulu.";
+            echo "No data found in the database.";
         }
+
+        // Close the database connection
+        $conn->close();
         ?>
-    </div>
+    </table><br></br>
+    <a href="biodata.html"><button type="button">Add Data</a>
 </body>
 </html>
